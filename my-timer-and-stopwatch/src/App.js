@@ -23,6 +23,18 @@ export default function App() {
 function Layout() {
   return (
     <>
+      {/* <Header/> */}
+      <SideNavMenu />
+      {/* <Footer/> */}
+
+      <Outlet />
+    </>
+  );
+}
+
+function SideNavMenu() {
+  return (
+    <>
       <nav>
         <ul>
           <li>
@@ -39,7 +51,10 @@ function Layout() {
           </li>
         </ul>
       </nav>
-      <Outlet />
     </>
   );
 }
+
+// function Header() {}
+
+// function Footer() {}
