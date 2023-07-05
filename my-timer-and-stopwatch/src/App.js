@@ -1,5 +1,6 @@
 import { Route, Routes, Outlet, NavLink } from "react-router-dom";
 
+import "./App.css";
 import { Home } from "./pages/Home";
 import { Timer } from "./pages/Timer";
 import { Stopwatch } from "./pages/Stopwatch";
@@ -35,8 +36,8 @@ function Layout() {
 function SideNavMenu() {
   return (
     <>
-      <nav>
-        <ul>
+      <nav className="navigation-menu">
+        <ul className="menu-items">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
