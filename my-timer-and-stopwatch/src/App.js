@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Route, Routes, Outlet, NavLink } from "react-router-dom";
 
 import "./App.css";
@@ -34,9 +35,18 @@ function Layout() {
 }
 
 function SideNavMenu() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <nav className="navigation-menu">
+      <button className="toggle-button" onClick={toggleMenu}>
+        Toggle Menu
+      </button>
+      <nav className={`navigation-menu ${isOpen ? "" : "close"}`}>
         <ul className="menu-items">
           <li>
             <NavLink to="/">Home</NavLink>

@@ -1,14 +1,49 @@
+:root {
+  --sideNavMenuWidth: 200px;
+
+  --color-palette-beige: #D1C2B4;
+  --color-palette-beige2: #ab9f93;
+  --color-palette-beige3: #867d74;
+  --color-palette-beige4: #635c56;
+  --color-palette-beige5: #423e3a;
+  --color-palette-beige10: #ab9d8f;
+  --color-palette-blue: #b4c3d2;
+  --color-palette-darkblue: #2e3d4b;
+  --color-palette-purple: #B4B4D1;
+  --color-palette-green: #B4D1D1;
+  --color-palette-red: #d1b3b4;
+  --color-palette-white: #f6f3f0;
+  --color-palette-white2: #e5eaf0;
+  --color-palette-grey: #333333;
+  --color-palette-black: #1a1a1a;
+  --color-primary: var(--color-palette-white);
+  --color-secondary: var(--color-palette-beige);
+  --color-text-primary: var(--color-palette-black);
+  --color-text-secondary: var(--color-palette-white);
+}
+
 body {
-  background-color: bisque;
+  background-color: var(--color-primary);
 }
 
 .navigation-menu {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 200px;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: var(--color-secondary);
+  width: var(--sideNavMenuWidth);
+  right: calc(-1 * var(--sideNavMenuWidth));
+  transition: right 0.15s ease-in-out;
+}
+
+.navigation-menu.close {
+  right: 0;
+  /* visibility: hidden; */
+}
+
+.toggle-button {
+  display: block;
+  margin: 10px;
 }
 
 .menu-items {
@@ -20,16 +55,16 @@ body {
 .menu-items li a {
   display: block;
   padding: 10px;
-  color: #333;
+  color: var(--color-text-primary);
   text-decoration: none;
 }
 
 .menu-items li a:hover {
-  background-color: #555;
-  color: white;
+  background-color: var(--color-palette-beige3);
+  color: var(--color-text-secondary);
 }
 
 .menu-items li .active {
-  background-color: grey;
-  color: white;
+  background-color: var(--color-palette-beige4);
+  color: var(--color-text-secondary);
 }
