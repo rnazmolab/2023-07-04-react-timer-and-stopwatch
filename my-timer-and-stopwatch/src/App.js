@@ -1,6 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Outlet, Link } from "react-router-dom";
 
-import { Layout } from "./Layout";
 import { Home } from "./pages/Home";
 import { Timer } from "./pages/Timer";
 import { Stopwatch } from "./pages/Stopwatch";
@@ -17,6 +16,30 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+    </>
+  );
+}
+
+function Layout() {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/timer">Timer</Link>
+          </li>
+          <li>
+            <Link to="/stopwatch">Stopwatch</Link>
+          </li>
+          <li>
+            <Link to="/not-found">Not Found</Link>
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
     </>
   );
 }
