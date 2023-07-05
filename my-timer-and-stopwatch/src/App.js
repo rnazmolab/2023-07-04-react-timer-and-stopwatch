@@ -1,4 +1,4 @@
-import { Route, Routes, Outlet, Link } from "react-router-dom";
+import { Route, Routes, Outlet, NavLink } from "react-router-dom";
 
 import { Home } from "./pages/Home";
 import { Timer } from "./pages/Timer";
@@ -38,16 +38,16 @@ function SideNavMenu() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/timer">Timer</Link>
+            <NavLink to="/timer">Timer</NavLink>
           </li>
           <li>
-            <Link to="/stopwatch">Stopwatch</Link>
+            <NavLink to="/stopwatch">Stopwatch</NavLink>
           </li>
           <li>
-            <Link to="/not-found">Not Found</Link>
+            <NavLink to="/not-found">Not Found</NavLink>
           </li>
         </ul>
       </nav>
